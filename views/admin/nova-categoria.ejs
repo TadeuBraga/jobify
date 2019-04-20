@@ -1,0 +1,16 @@
+<%- include('header') %>
+        <h2>
+            Cadastro de Categoria:
+            <a href="/admin/categorias">Categoria</a>
+        </h2>
+        <div>
+            <form method="POST" action="<%- categoria.id != null ? '/admin/categorias/editar/'+categoria.id : '/admin/categorias/nova' %>">
+                <label>Nome</label>
+                <input type="text" name="categoria" value="<%- categoria.categoria %>">
+                <br>              
+                <button type="submit">Salvar categoria</button>
+                <br>
+            </form>
+            
+        </div> 
+<%- include('footer') %>

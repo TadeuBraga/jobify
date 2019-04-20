@@ -1,0 +1,23 @@
+
+<%- include('header') %>
+        <h2>
+            Admin Categorias:
+            <a href="/admin/categorias/nova/">Nova Categoria</a>
+        </h2>
+        <%if(error != null && error == 'categoria_possui_vagas'){%>
+        <div>
+            Essa categoria possui vagas que devem ser deletadas primeiro!
+        </div>
+        <%}%>
+        <div>
+            <ul>
+                <% categorias.forEach( categoria=> { %>
+                    <li>
+                        <%- categoria.categoria %>
+                        <a href="/admin/categorias/delete/<%- categoria.id %>">Excluir</a> |
+                        <a href="/admin/categorias/editar/<%- categoria.id %>">Editar</a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div> 
+<%- include('footer') %>
